@@ -17,7 +17,7 @@
   
    <!-- App CSS --> 
    <link id="theme-style" rel="stylesheet" href="assets/css/portal.css">
- 
+  
 </head>
  
 <div class="app">      
@@ -283,24 +283,24 @@
    </header><!--//app-header-->
  
     <div class="app-wrapper">
-      
-            <div class="row" >
+        <form action="customerd.html">
+            <div class="col" >
     
-            <div class="col">
-                <input type="productname" class="form-control"placeholder="Product Name" id="productid">
-            </div>
-            
-            <div class="input-group mb-3">
-                <span class="input-group-text">Php</span>
-                <input type="text" class="form-control" aria-label="Amount (to the nearest dollar)">
-                </div>      
+                <div class="row-lg-4">
+                    <label>Product Name</label>  
+                    <input type="productname" class="form-control"placeholder="Product Name" id="productname" required>
+                </div>
+                
+                <div class="row-lg-4">
+                    <label>Product Price</label>
+                    <input type="productname" class="form-control"placeholder="Product Price" id="productprice" required>
+                </div>
 
             </div>
     
-                <button class="btn btn-primary btn-block mb-4" onclick="add()">Submit</button>
-
-       <div>
-       </div>
+                <button type="button" class="btn btn-primary btn-block mb-4" id="store" onclick="storage()">Submit</button>
+              
+            </form>
 
     </div>
 
@@ -319,7 +319,7 @@
   
    <!-- Page Specific JS -->
    <script src="assets/js/app.js"></script>
-   <!--Javascript-->
-    <script src="assets/js/javascript.js"></script>
+  <!--Javascript-->
+  <script  src="assets/js/javascript.js"></script>
 </body>
 
