@@ -17,6 +17,14 @@
         <meta name="author" content="Xiaoying Riley at 3rd Wave Media" />
         <link rel="shortcut icon" href="favicon.ico" />
 
+        <link
+            rel="stylesheet"
+            href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css"
+        />
+        <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.slim.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"></script>
+
         <!-- FontAwesome JS-->
         <script defer src="assets/plugins/fontawesome/js/all.min.js"></script>
 
@@ -607,7 +615,81 @@
             <div class="app-content pt-3 p-md-3 p-lg-4">
                 <div class="container-xl">
                     <h1 class="app-page-title">Overview</h1>
-                    <div style="margin-bottom: 10px">
+
+                    <div
+                        class="position-fixed bottom-0 end-0 p-3"
+                        style="z-index: 11"
+                    >
+                        <div
+                            id="liveToast"
+                            class="toast hide"
+                            role="alert"
+                            aria-live="assertive"
+                            aria-atomic="true"
+                            data-bs-autohide="false"
+                        >
+                            <div class="toast-header">
+                                <svg
+                                    class="bd-placeholder-img rounded mr-2"
+                                    width="20"
+                                    height="20"
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    preserveAspectRatio="xMidYMid slice"
+                                    focusable="false"
+                                    role="img"
+                                >
+                                    <rect
+                                        width="100%"
+                                        height="100%"
+                                        fill="#007aff"
+                                    ></rect>
+                                </svg>
+                                <strong class="me-auto">Daily Update</strong>
+                                <small>Just now</small>
+                                <button
+                                    type="button"
+                                    class="btn-close"
+                                    data-bs-dismiss="toast"
+                                    aria-label="Close"
+                                ></button>
+                            </div>
+                            <div class="toast-body">
+                                <p>
+                                    Hello! Today is
+                                    <span id="dateToday"></span>.
+                                </p>
+
+                                <p>
+                                    The weather is <strong>cloudy</strong>. Here
+                                    are some of ways you can do to prevent your
+                                    crops from heavy rain:
+                                </p>
+
+                                <p style="margin-bottom: 2px">
+                                    1. Spread a fabric plant covering above crop
+                                    rows.
+                                </p>
+                                <p style="margin-bottom: 2px">
+                                    2. Cover individual plants with pots or
+                                    buckets.
+                                </p>
+                                <p style="margin-bottom: 2px">
+                                    3. Stake plants with stems so they don't
+                                    break in the wind.
+                                </p>
+                                <p style="margin-bottom: 2px">
+                                    4. Dig ditches between crop rows if the soil
+                                    still isn't draining.
+                                </p>
+                                <p style="margin-bottom: 2px">
+                                    5. Spread salt or pesticide to repel slugs
+                                    from wet crops.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div style="margin-bottom: 20px">
                         <a
                             class="weatherwidget-io"
                             href="https://forecast7.com/en/14d28121d09/santa-rosa/"
@@ -1355,5 +1437,24 @@
 
         <!-- Page Specific JS -->
         <script src="assets/js/app.js"></script>
+
+        <script>
+            $(document).ready(function () {
+                $('.toast').toast('show');
+
+                const days = [
+                    'Sunday',
+                    'Monday',
+                    'Tuesday',
+                    'Wednesday',
+                    'Thursday',
+                    'Friday',
+                    'Saturday',
+                ];
+
+                document.getElementById('dateToday').innerText =
+                    days[new Date().getDay()];
+            });
+        </script>
     </body>
 </html>
